@@ -68,7 +68,9 @@ class ResultWriter:
 
     def __call__(self, result: dict, audio_path: str):
         audio_basename = os.path.basename(audio_path)
-        output_path = os.path.join(self.output_dir, audio_basename + "." + self.extension)
+        output_path = os.path.join(
+            self.output_dir, f"{audio_basename}.{self.extension}"
+        )
 
         with open(output_path, "w", encoding="utf-8") as f:
             self.write_result(result, file=f)

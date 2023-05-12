@@ -140,7 +140,7 @@ def transcribe(
     prompt_reset_since = 0
 
     if initial_prompt is not None:
-        initial_prompt_tokens = tokenizer.encode(" " + initial_prompt.strip())
+        initial_prompt_tokens = tokenizer.encode(f" {initial_prompt.strip()}")
         all_tokens.extend(initial_prompt_tokens)
     else:
         initial_prompt_tokens = []
